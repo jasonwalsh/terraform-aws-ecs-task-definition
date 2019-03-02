@@ -1,6 +1,11 @@
-.PHONY: apply destroy fmt init plan
+.PHONY: all apply destroy fmt init plan
 
-terraform = docker-compose run --rm terraform
+options = -it --rm -v $(shell pwd):/terraform -w /terraform
+repository = quay.io/jasonwalsh/terraform
+tag = v0.12.0-beta1
+terraform = docker run $(options) $(repository):$(tag)
+
+all: fmt apply
 
 apply:
 	@$(terraform) apply
