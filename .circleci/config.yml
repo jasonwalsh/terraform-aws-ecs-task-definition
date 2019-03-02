@@ -5,5 +5,22 @@ jobs:
     steps:
       - checkout
       - run:
-          command: terraform fmt -check=true
+          command: terraform init
+  test:
+    docker:
+      - image: quay.io/jasonwalsh/terraform:v0.12.0-beta1
+    steps:
+      - checkout
+      - run:
+          command: |
+            terraform validate
+            terraform fmt -check=true
 version: 2
+workflows:
+  build-test:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
+  version: 2
