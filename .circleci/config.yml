@@ -1,0 +1,9 @@
+jobs:
+  build:
+    docker:
+      - image: quay.io/jasonwalsh/terraform:v0.12.0-beta1
+    steps:
+      - checkout
+      - run:
+          command: terraform fmt -check=true
+version: 2
