@@ -1,0 +1,7 @@
+services:
+  terraform:
+    image: quay.io/jasonwalsh/terraform:v0.12.0-beta1
+    volumes:
+      - .:/terraform
+    working_dir: /terraform
+version: "3.7"
