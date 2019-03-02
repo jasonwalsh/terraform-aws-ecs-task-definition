@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/jasonwalsh/terraform-aws-ecs-task-definition.svg?style=svg)](https://circleci.com/gh/jasonwalsh/terraform-aws-ecs-task-definition)
+
 ## Contents
 
 - [Usage](#usage)
