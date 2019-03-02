@@ -1,3 +1,4 @@
 output "container_definitions" {
-  value = local.container_definitions
+  description = "A list of container definitions in JSON format that describe the different containers that make up your task"
+  value       = local.container_definitions
 }
